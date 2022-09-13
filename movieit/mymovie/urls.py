@@ -15,12 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls.conf import include
 from views import view01
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', view01.mainFunc),
-    path('notice', view01.mainFunc),
-    path('notice/', include('mymovie.urls')), # 위임하기
+    path('main', view01.mainFunc),
+    
+    path('insert', view01.insertFunc),
+    path('insertok', view01.insertokFunc),
+    
+    path('search', view01.searchFunc), 
+    
+    path('content', view01.contentFunc),
+    path('contentok', view01.contentokFunc),
+    
+    
+    path('update', view01.updateFunc),
+    path('updateok', view01.updateokFunc),
+    
+    path('delete', view01.deleteFunc),
+    path('deleteok', view01.deleteokFunc),
+    
 ]
