@@ -17,14 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include 
 from views import view1
-from django.urls.conf import include
 from views import view01, view02
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('',view01.mainFunc),
-    path('qna/',include('myqna.urls'))
+    path('qna/',include('myqna.urls')),
     path('', view02.mainFunc),
     path('notice', view01.mainFunc),
     path('notice/', include('mymovie.urls')), # 위임하기
