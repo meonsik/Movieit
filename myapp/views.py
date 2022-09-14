@@ -17,7 +17,7 @@ def inputFunc(request):
     return render(request, 'show.html')
 
 def recommend_movie(request):
-    movie_data = pd.read_csv('teampro/myapp/movie_naver.csv')
+    movie_data = pd.read_csv(r'C:\Users\yoonam.YOONAM\OneDrive\바탕 화면\movie_naver.csv')
 
     KIM = int(request.POST.get('KIM'))
     NOPE = int(request.POST.get('NOPE'))
