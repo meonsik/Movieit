@@ -15,22 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-<<<<<<< HEAD
-from django.urls.conf import include
-from views import view01
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', view01.mainFunc),
-    path('notice', view01.mainFunc),
-    path('notice/', include('mymovie.urls')), # 위임하기
-=======
-from myapp import views
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.mainFunc), 
-    path('input', views.inputFunc), 
-    path('recommend_movie', views.recommend_movie), 
->>>>>>> 0b2580f5c67c916846ab8d2e6aad361ccfec0b01
 ]
