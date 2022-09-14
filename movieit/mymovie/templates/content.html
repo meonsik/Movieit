@@ -9,29 +9,23 @@ let xhr;
 window.onload = function(){
 	document.querySelector("#btnlike").onclick = function(){
 		xhr = new XMLHttpRequest();
-		//alert('b');
+		 
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState === XMLHttpRequest.DONE){
 				if(xhr.status === 200){
-					alert('좋아요!');
+					//document.getElementById('btnlike').disabled = true;
 				}
-		}
-	}
-		xhr.open('GET', 'contentok?id={{data_one.id}}', true);
-		xhr.send();
-}
-}
-function increase(){
-	xhr = new XMLHttpRequest();
-	
-	xhr.onreadystatechange = function(){
-		if(xhr.readyState === XMLHttpRequest.DONE){
-			if(xhr.status === 200){
-				alert('a');
 			}
 		}
+
+		xhr.open('GET', 'contentok?id={{data_one.id}}', true);
+		xhr.send();
+		
+		window.location.reload();
+	
 	}
 }
+
 
 </script>
 </head>
@@ -43,7 +37,7 @@ function increase(){
 			<td style="text-align:right; width:95%">
 				<a href="/notice/update?id={{data_one.id}}">수정</a>
 				<a href="/notice/delete?id={{data_one.id}}">삭제</a>
-				<a href="javascript:history.back();">목록</a>
+				<a href="/notice">목록</a>
 			</td>
 		</tr>
 	</table>
@@ -62,7 +56,9 @@ function increase(){
 		</tr>
 		<tr>
 			<td colspan="4">
+				
 				<textarea name="cont" id="cont" style="width:100%" rows="10" readonly="readonly">{{data_one.cont}}</textarea>
+				
 			</td>
 		</tr>
 	</table>

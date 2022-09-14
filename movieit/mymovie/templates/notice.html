@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <title>공지사항</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
 </head>
 <body>
 <div style="width:auto; margin:20px;">
+{% include 'includes/navbar.html' %}
 <h2>** 공지사항 페이지 **</h2>
 <a href="/notice/insert">글 작성하기</a>
 
@@ -66,6 +66,7 @@
 		</td>
 	</tr>
 </table>
+{% include 'includes/footer.html' %}
 </div>
 </body>
 </html>
