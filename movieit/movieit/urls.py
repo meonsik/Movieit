@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.urls.conf import include 
+from views import view1
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',view1.mainFunc),
+    path('qna/',include('myqna.urls'))
+    
 ]
