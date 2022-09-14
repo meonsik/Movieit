@@ -4,6 +4,7 @@ from datetime import datetime
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http.response import HttpResponseRedirect
 
+
 def mainFunc(request):
     data_all = NoticeTab.objects.all().order_by('-id')
     per_page = 10
@@ -120,5 +121,13 @@ def deleteokFunc(request):
         return render(request, 'error.html') 
     
     
-    
+def get_client_ip(request): # 수정중
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
     
