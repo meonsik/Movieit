@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 from views import view01, view02
+from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', view02.mainFunc),
     path('notice', view01.mainFunc),
     path('notice/', include('mymovie.urls')), # 위임하기
-]
+    path('input', views.inputFunc), 
+    path('recommend_movie', views.recommend_movie),
+] 
